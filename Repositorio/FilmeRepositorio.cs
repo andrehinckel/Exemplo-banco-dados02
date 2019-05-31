@@ -146,7 +146,7 @@ duracao = @DURACAO, avaliacao = @AVALIACAO, tem_sequencia = @TEM_SEQUENCIA WHERE
             command.Parameters.AddWithValue("@CURTIU", filme.Categoria);
             command.Parameters.AddWithValue("@DURACAO", filme.Duracao);
             command.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
-            command.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.T);
+            command.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
             command.Parameters.AddWithValue("@ID", filme.Id);
             command.ExecuteNonQuery();
             connection.Close();
