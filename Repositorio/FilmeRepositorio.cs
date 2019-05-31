@@ -130,5 +130,26 @@ namespace Repositorio
             command.ExecuteNonQuery();
             connection.Close();
         }
+
+        public void Update(Filme filme)
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = CadeiaConexao;
+            connection.Open();
+
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = @"UPDATE filmes SET nome = @NOME, categoria = @CATEGORIA, curtiu = @CURTIU,
+duracao = @DURACAO, avaliacao = @AVALIACAO, tem_sequencia = @TEM_SEQUENCIA WHERE id = @ID ";
+            command.Parameters.AddWithValue("@NOME", filme.Nome);
+            command.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
+            command.Parameters.AddWithValue("@CURTIU", filme.Categoria);
+            command.Parameters.AddWithValue("@DURACAO", filme.Duracao);
+            command.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
+            command.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.T);
+            command.Parameters.AddWithValue("@ID", filme.Id);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
