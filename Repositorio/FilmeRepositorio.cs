@@ -81,6 +81,7 @@ namespace Repositorio
 
             DataTable dataTable = new DataTable();
             dataTable.Load(command.ExecuteReader());
+            connection.Close();
             if (dataTable.Rows.Count == 1)
             {
                 DataRow row = dataTable.Rows[0];
@@ -92,7 +93,6 @@ namespace Repositorio
                 filme.Duracao = Convert.ToDateTime(row["duracao"]);
                 filme.Avaliacao = Convert.ToDecimal(row["avaliacao"]);
                 filme.TemSequencia = Convert.ToBoolean(row["tem_sequencia"]);
-                connection.Close();
                 return filme;
             }
             return null;
