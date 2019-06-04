@@ -143,7 +143,7 @@ namespace Repositorio
 duracao = @DURACAO, avaliacao = @AVALIACAO, tem_sequencia = @TEM_SEQUENCIA WHERE id = @ID ";
             command.Parameters.AddWithValue("@NOME", filme.Nome);
             command.Parameters.AddWithValue("@CATEGORIA", filme.Categoria);
-            command.Parameters.AddWithValue("@CURTIU", filme.Categoria);
+            command.Parameters.AddWithValue("@CURTIU", filme.Curtiu);
             command.Parameters.AddWithValue("@DURACAO", filme.Duracao);
             command.Parameters.AddWithValue("@AVALIACAO", filme.Avaliacao);
             command.Parameters.AddWithValue("@TEM_SEQUENCIA", filme.TemSequencia);
